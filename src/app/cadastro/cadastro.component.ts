@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DiasDaSemana } from '../dias-da-semana.enum';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,6 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CadastroComponent implements OnInit {
 
   id: any
+  texto: string = 'numero'
+  valor: number = 9
+  endereco: [string, number] = ['rua teste', 30]
+  dia: DiasDaSemana = DiasDaSemana.sex
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,9 +25,15 @@ export class CadastroComponent implements OnInit {
     this.activatedRoute.params.subscribe(parametros => {
       if(parametros['id']){
         this.id = parametros['id']
-        alert(this.id)
+       
       }
     })
+
+    this.texto = this.retornarNome('Sophia')
+  }
+
+  retornarNome = (nome: string): string =>{
+    return `${nome} Fernandes`
   }
 
 }
