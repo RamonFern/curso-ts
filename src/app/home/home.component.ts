@@ -11,14 +11,17 @@ export class HomeComponent implements OnInit {
 
   prod: any
   produtos: Array<Produto> = []
+  carregarLoading: boolean = false
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
 
     this.produtoService.listar().subscribe(prods => {
-      this.produtos = prods
-      this.prod = prods
-      console.log(this.produtos)
+      setTimeout(() =>{
+        this.carregarLoading = true
+        this.produtos = prods
+      }, 3000)
+      
     
     })   
   }
