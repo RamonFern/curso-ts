@@ -16,7 +16,7 @@ export class CadastroComponent implements OnInit {
   endereco: [string, number] = ['rua teste', 30]
   dia: DiasDaSemana = DiasDaSemana.sex
 
-  produto: Produto = new Produto('TV', 1200)
+  produto: Produto = new Produto(1,'TV', 1200)
 
   constructor(
     private activatedRoute: ActivatedRoute,

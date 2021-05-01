@@ -1,5 +1,20 @@
-<p>home works!</p>
 
-<div *ngFor="let p of prod">
-    {{p.nome}}
-</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Preco</th>
+        <th scope="col">Desconto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of produtos">
+        <th scope="row" >{{p.id}}</th>
+        <td>{{p.nome}}</td>
+        <td>{{p.preco}}</td>
+        <td>excluir</td>
+      </tr>
+      
+    </tbody>
+  </table>
