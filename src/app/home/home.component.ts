@@ -20,10 +20,17 @@ export class HomeComponent implements OnInit {
       setTimeout(() =>{
         this.carregarLoading = true
         this.produtos = prods
-      }, 3000)
-      
-    
+      }, 1000)
     })   
+  }
+
+  excluirItem = (id: any) => {
+    this.produtoService.excluirItem(id).subscribe(
+      success => console.log("Deletado com sucessso"),
+      error => console.log("Não foi possivel deletar. ERRO!"),
+      () => console.log('Requisição completa')
+    )
+    this.ngOnInit();
   }
 
 }

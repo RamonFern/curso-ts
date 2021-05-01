@@ -1,19 +1,9 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "nome": "Mouse",
-            "preco": 5500
-        },
-        {
-            "id": 2,
-            "nome": "Teclado",
-            "preco": 4500
-        },
-        {
-            "id": 3,
-            "nome": "Notebook dell",
-            "preco": 6500
-        }
-    ]
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Mouse",
+      "preco": 5500
+    }
+  ]
 }
