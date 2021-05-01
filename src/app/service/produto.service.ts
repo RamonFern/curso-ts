@@ -23,4 +23,12 @@ export class ProdutoService {
   adicionar(prod: Produto){
     return this.$http.post(this.API, prod)
   }
+
+  editar(prod: Produto){
+    return this.$http.put(`${this.API}/${prod.id}`, prod)
+  }
+
+  buscarItemId(id: any){
+    return this.$http.get<Produto>(`${this.API}/${id}`)
+  }
 }

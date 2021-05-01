@@ -6,6 +6,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Preco</th>
         <th scope="col">Excluir</th>
+        <th scope="col">Editar</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
         <td>{{p.nome | uppercase }}</td>
         <td>{{p.preco | currency:'BRL'}}</td>
         <td> <button type="button" class="btn btn-danger" (click)="excluirItem(p.id)">Excluir</button></td>
+        <td> <button type="button" class="btn btn-warning" (click)="editar(p.id)">Editar</button></td>
       </tr>
       
     </tbody>
