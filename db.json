@@ -3,7 +3,12 @@
     {
       "id": 1,
       "nome": "Mouse",
-      "preco": 5500
+      "preco": 5500.97
+    },
+    {
+      "id": 2,
+      "nome": "Notbook",
+      "preco": 5500.97
     }
   ]
 }
