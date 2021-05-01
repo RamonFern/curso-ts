@@ -9,6 +9,30 @@
       "id": 2,
       "nome": "Notbook",
       "preco": 5500.97
+    },
+    {
+      "id": 3,
+      "nome": "produto teste",
+      "preco": "200.99",
+      "desconto": 10
+    },
+    {
+      "id": 4,
+      "nome": "outro produto",
+      "preco": "12.00",
+      "desconto": 10
+    },
+    {
+      "id": 5,
+      "nome": "mais um",
+      "preco": "10.9",
+      "desconto": 10
+    },
+    {
+      "id": 6,
+      "nome": "produto com rota",
+      "preco": "10.8",
+      "desconto": 10
     }
   ]
 }

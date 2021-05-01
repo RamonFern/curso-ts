@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DiasDaSemana } from '../dias-da-semana.enum';
 import { Produto } from '../Objeto/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,34 +12,33 @@ import { Produto } from '../Objeto/Produto';
 export class CadastroComponent implements OnInit {
 
   id: any
-  texto: string = 'numero'
-  valor: number = 9
-  endereco: [string, number] = ['rua teste', 30]
-  dia: DiasDaSemana = DiasDaSemana.sex
 
-  produto: Produto = new Produto(1,'TV', 1200)
+
+  produto: Produto = new Produto(0,'', 0)
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private prodService: ProdutoService
   ) { }
 
   ngOnInit(): void {
-
-    this.produto.preco = this.produto.aplicarDesconto(1200)
 
     this.activatedRoute.params.subscribe(parametros => {
       if(parametros['id']){
         this.id = parametros['id']
        
       }
-    })
-
-    this.texto = this.retornarNome('Sophia')
+    })  
   }
 
-  retornarNome = (nome: string): string =>{
-    return `${nome} Fernandes`
+  adicionar = () => {
+    this.prodService.adicionar(this.produto).subscribe(
+      success => console.log("Salvo com sucessso"),
+      error => console.log("Não foi possivel Salvar. ERRO!"),
+      () => console.log('Requisição completa'))
+      this.router.navigate(['home'])
   }
+
 
 }
