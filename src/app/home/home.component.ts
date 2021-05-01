@@ -13,8 +13,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.prod = this.produtoService.listar()
-   
+    this.produtoService.listar().subscribe(prods => {
+      console.log(prods)
+      this.prod = prods
+    })   
   }
 
 }

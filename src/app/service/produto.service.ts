@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProdutoService {
 
-  constructor() { }
+  constructor(private $http: HttpClient) { }
 
   listar(){
-    return ['Compurador', 'Computador', 'Fones', 'Mouse']
+    return this.$http.get('http://localhost:3000/produtos')
   }
 }
